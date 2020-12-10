@@ -1,14 +1,7 @@
 import { LitElement, html } from 'lit-element';
-import { ScopedElementsMixin } from '@open-wc/scoped-elements';
-import { LoginPage } from '../../pages/LoginPage/index.js';
+import '../../pages/LoginPage/login-page.js';
 
-export class SimpleLoginApp extends ScopedElementsMixin(LitElement) {
-  static get scopedElements() {
-    return {
-      'login-page': LoginPage,
-    };
-  }
-
+export class SimpleLoginApp extends LitElement {
   render() {
     return html` <login-page></login-page> `;
   }

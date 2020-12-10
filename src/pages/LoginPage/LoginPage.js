@@ -1,23 +1,8 @@
 import { LitElement, html, css } from 'lit-element';
-import { ScopedElementsMixin } from '@open-wc/scoped-elements';
 
-import LoginPageUI from './components/LoginPageUI.js';
+import './components/login-page-ui.js';
 
-export default class LoginPage extends ScopedElementsMixin(LitElement) {
-  static get scopedElements() {
-    return {
-      'login-page-ui': LoginPageUI,
-    };
-  }
-
-  static get properties() {
-    return {
-      // TODO: remove
-      title: { type: String },
-      page: { type: String },
-    };
-  }
-
+export default class LoginPage extends LitElement {
   // TODO: style
   static get styles() {
     return css``;

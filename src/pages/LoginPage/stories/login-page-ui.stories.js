@@ -1,4 +1,4 @@
-import { html } from '@lion/core';
+import { html } from 'lit-element';
 import '../components/login-page-ui.js';
 
 export default {

@@ -9,20 +9,18 @@ Application created with web components
 ### Open-wc Starter App
 [Open Web Components](https://open-wc.org/) provides guides, tools and libraries for developing web components
 
+#### Scoped
+Although [Scoped elements
+](https://github.com/open-wc/open-wc/tree/master/packages/scoped-elements) are higthly recommended,  this project does not used because is a overkill for an small app which is a single package. Futhermore Material Design does not support directly this aproach and I would need some hack. If the project grew and were splitted in several packages, it must use it.
 
 ### LitElement
 
 A simple base class for creating fast, lightweight web components. [Website](https://lit-element.polymer-project.org/)
 
-### Localizing: Lion Web Components (styless web components catalog)
+### Lion Web Components' Localize 
 
-[Lion localize](https://lion-web-components.netlify.app/?path=/docs/localize-intro--page)) is meant to translate text into multiple languages. In it's simplest form it is a function that returns the translated text for a namespace + key.
+[Lion web components's localize system](https://lion-web-components.netlify.app/?path=/docs/localize-intro--page) enable to translate web components
 
-
-
-### Components: Material web components
-
-[The Material Web Components (MWC)](https://github.com/material-components/material-components-web-components) are a collection of Web Components maintained by Google that implement Material Design.
 ## How to use it
 
 Install the dependencies
