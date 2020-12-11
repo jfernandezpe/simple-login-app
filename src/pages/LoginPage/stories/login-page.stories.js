@@ -5,4 +5,4 @@ export default {
   title: 'login-page',
 };
 
-export const App = () => html` <login-page></login-page> `;
+export const LoginPage = () => html` <login-page></login-page> `;

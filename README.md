@@ -21,6 +21,36 @@ A simple base class for creating fast, lightweight web components. [Website](htt
 
 [Lion web components's localize system](https://lion-web-components.netlify.app/?path=/docs/localize-intro--page) enable to translate web components
 
+## Architecture/structure
+
+### Aplication
+
+It the piece reponsible of routing, session and other common states or features
+
+### Pages
+
+The main features or modules of the application. Every module must have:
+
+* A main component, which controls the page and comunicate:
+  * Comunicate the views with the model
+  * Comunicate the app with the module
+  * Manage the state
+  * etc..
+* Componemts: which must be stateless. The should be non reusable components or layouts, otherwise it should be in the reusable components folder
+
+And may have:
+* domain: the bussiness logic
+* repositories: which comunicate which the API.
+
+### catalog
+
+Catalog of stateless reusable components and layouts
+
+### utils
+
+Reusable libraries
+
+
 ## How to use it
 
 Install the dependencies

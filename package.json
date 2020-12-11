@@ -30,6 +30,7 @@
     "prettier": "^2.0.4",
     "rimraf": "^2.6.3",
     "rollup": "^2.3.4",
+    "sinon": "^9.2.1",
     "web-component-analyzer": "^1.1.6"
   },
   "eslintConfig": {
@@ -60,6 +61,8 @@
   "author": "jfernandezpe <jfernandezpe.dev@gmail.com",
   "license": "MIT",
   "dependencies": {
+    "@material/mwc-button": "^0.20.0",
+    "@material/mwc-textfield": "^0.20.0",
     "lit-element": "^2.4.0"
   }
 }

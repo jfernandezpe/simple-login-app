@@ -1,3 +1,3 @@
-import LoginPage from './LoginPage.js';
+import LoginPage from './main/LoginPage.js';
 
 customElements.define('login-page', LoginPage);

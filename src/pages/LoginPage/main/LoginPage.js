@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 
-import './components/login-page-ui.js';
+import '../components/login-page-ui/login-page-ui.js';
 
 export default class LoginPage extends LitElement {
   // TODO: style
