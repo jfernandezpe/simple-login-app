@@ -67,20 +67,36 @@ Install the dependencies
 
 `npm install`
 
-## Demoing
+## Unit test
+
+Execute the unit test and generate a html coverage report
+
+`npm test`
+
+### Demoing
 
 Execute the next command:
 `npm run storybook`
 
-## Start the app in develop mode
+Generate static storybooks:
+`npm run storybook:build`
+
+### Start the app in develop mode
 Run the app with a whatcher for your changes. It also includes a mock server
 `npm start`
 
-## Build the app
+### Build the app
 Build a dist version
 `npm run build`
 
-## Run the built app
-Run a built version of the app with the mock server
-`npm run start:build'
+### Run the built app
+Build a dist version and run the run the app
+`npm run start:build`
 
+## Integration with CD/CI tools 
+The project can be integrate in a CD/CI pipeline with the next usefull above commands:
+
+```
+npm test
+npm run storybook:build 
+npm run build```

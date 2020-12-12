@@ -22,7 +22,7 @@ export default class LoginPageUI extends LocalizeMixin(
   static get localizeNamespaces() {
     return [
       {
-        'login-page-ui': locale => import(`./assets/translations/${locale}.js`),
+        'login-page-ui': () => import(`./assets/translations/en.js`),
       },
     ];
   }
