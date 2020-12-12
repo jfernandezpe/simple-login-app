@@ -34,6 +34,7 @@
     "prettier": "~2.2.1",
     "rimraf": "~3.0.2",
     "rollup": "~2.34.2",
+    "rollup-plugin-copy": "^3.3.0",
     "sinon": "~9.2.2",
     "web-component-analyzer": "~1.1.6"
   },

@@ -1,6 +1,8 @@
 // TODO: create a config to enable dynamic language loading
 
 import merge from 'deepmerge';
+import copy from 'rollup-plugin-copy';
+
 // use createSpaConfig for bundling a Single Page App
 import { createSpaConfig } from '@open-wc/building-rollup';
 
@@ -12,7 +14,7 @@ const baseConfig = createSpaConfig({
   // outputDir: 'dist',
 
   // IE11 compatibility
-   legacyBuild: true,
+  legacyBuild: true,
 
   // development mode creates a non-minified build for debugging or development
   developmentMode: process.env.ROLLUP_WATCH === 'true',
@@ -25,6 +27,11 @@ export default merge(baseConfig, {
   // if you use createSpaConfig, you can use your index.html as entrypoint,
   // any <script type="module"> inside will be bundled by rollup
   input: './index.html',
+  plugins: [
+    copy({
+      targets: [{ src: 'manifest.webmanifest', dest: 'dist/' }],
+    }),
+  ],
 
   // alternatively, you can use your JS as entrypoint for rollup and
   // optionally set a HTML template manually

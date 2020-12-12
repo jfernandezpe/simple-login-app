@@ -67,7 +67,8 @@ export default class LoginPageUI extends LocalizeMixin(
     </form>`;
   }
 
-  onButtonClick() {
+  onButtonClick(e) {
+    e.preventDefault();
     const formFields = getFormFields(this.shadowRoot);
 
     const isValid = validateForm(formFields);

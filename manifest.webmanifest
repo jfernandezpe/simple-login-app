@@ -1,0 +1,8 @@
+{
+  "short_name": "SLApp",
+  "name": "Simple Login App",
+  "description": "An example of a progressive-web-app with webcomponets",
+  "start_url": "/",
+  "background_color": "#3367D6",
+  "display": "standalone"
+}
