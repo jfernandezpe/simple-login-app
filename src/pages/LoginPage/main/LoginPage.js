@@ -30,6 +30,7 @@ export default class LoginPage extends EventsMixin(LitElement) {
   }
 
   login({ detail }) {
+    // TODO: should loginError state be managed by the domain?
     const { username, password } = detail;
     this.authentication
       .login(username, password)

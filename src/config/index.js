@@ -1,3 +1,5 @@
+const prefix = '/api';
+
 export const endpoints = {
-  authentication: '/authentication',
+  authentication: `${prefix}/authentication`,
 };

@@ -73,9 +73,14 @@ Execute the next command:
 `npm run storybook`
 
 ## Start the app in develop mode
-Open the app with a whatcher for your changes
+Run the app with a whatcher for your changes. It also includes a mock server
 `npm start`
 
 ## Build the app
 Build a dist version
-`npm build`
+`npm run build`
+
+## Run the built app
+Run a built version of the app with the mock server
+`npm run start:build'
+
