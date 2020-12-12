@@ -1,0 +1,17 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "simple-login-app",
+      "path": "./src\\app\\SimpleApp\\simple-login-app.js"
+    },
+    {
+      "name": "login-page-ui",
+      "path": "./src\\pages\\LoginPage\\components\\login-page-ui.js"
+    },
+    {
+      "name": "login-page",
+      "path": "./src\\pages\\LoginPage\\login-page.js"
+    }
+  ]
+}
