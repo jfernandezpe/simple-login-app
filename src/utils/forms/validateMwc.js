@@ -1,9 +1,5 @@
-export const getFormFields = node => {
-  return Array.from(node.querySelectorAll('.form-field'));
-};
+export const getFormFields = node =>
+  Array.from(node.querySelectorAll('.form-field'));
 
-export const validateForm = formFields => {
-  return formFields.every(field => {
-    return field.reportValidity();
-  });
-};
+export const validateForm = formFields =>
+  formFields.every(field => field.reportValidity());

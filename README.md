@@ -1,7 +1,11 @@
 [![Built with open-wc recommendations](https://img.shields.io/badge/built%20with-open--wc-blue.svg)](https://github.com/open-wc)
 
 # simple login app
-Simple app with two features: login and see the user's last login
+Simple app with two features: login and see the user's last login. It has a lot of over-engenering, but thinking about how to scalete this application it has been a learning for me. Obviously, for a production application with this simple scope I would do a simple development. Probably just 3 web components (app and the two pages) or 5 (with the stateless-stateful pattern) and a couple of repositories using directly axios.
+
+The next step would be splited in several package and create a monorepo with lerna, but I didn't create yet due some problem with the open-wc configuration.
+
+About webpack and rollup, it only has the default open-wc configuration and it may be useful some custom one.
 
 ## technological stack
 Application created with web components
@@ -22,6 +26,8 @@ A simple base class for creating fast, lightweight web components. [Website](htt
 [Lion web components's localize system](https://lion-web-components.netlify.app/?path=/docs/localize-intro--page) enable to translate web components
 
 ## Architecture/structure
+
+This is a small project that has dozen of files, in other words, it has a lot of over-engineering. However I did it because it is an example about how I would scalate the project.
 
 ### Aplication
 
@@ -50,6 +56,10 @@ Catalog of stateless reusable components and layouts
 
 Reusable libraries
 
+### Config
+
+The app config
+
 
 ## How to use it
 
@@ -61,3 +71,11 @@ Install the dependencies
 
 Execute the next command:
 `npm run storybook`
+
+## Start the app in develop mode
+Open the app with a whatcher for your changes
+`npm start`
+
+## Build the app
+Build a dist version
+`npm build`

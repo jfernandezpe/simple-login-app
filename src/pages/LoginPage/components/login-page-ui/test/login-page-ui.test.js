@@ -7,6 +7,7 @@ describe('LoginPageUI', () => {
   let element;
   beforeEach(async () => {
     element = await fixture(html` <login-page-ui></login-page-ui> `);
+    await nextFrame;
   });
 
   it('renders a h1', () => {
@@ -27,19 +28,19 @@ describe('LoginPageUI', () => {
       loginButton = form.querySelector('.from-submit');
 
       eventStub = sinon.stub();
-      element.addEventListener('login:ui:submit', eventStub);
+      element.addEventListener('login-ui-submit', eventStub);
     });
     it('should validate the inputs', () => {
-      const firstINput = form.querySelector('.form-field');
+      const firstInput = form.querySelector('.form-field');
 
-      sinon.spy(firstINput, 'reportValidity');
+      sinon.spy(firstInput, 'reportValidity');
 
       loginButton.click();
 
-      expect(firstINput.reportValidity).to.have.been.called;
+      expect(firstInput.reportValidity).to.have.been.called;
     });
     describe('and the form has not been filled', () => {
-      it('should not dispatch the event "login:ui:submit"', () => {
+      it('should not dispatch the event "login-ui-submit"', () => {
         loginButton.click();
 
         expect(eventStub).to.have.been.not.called;
@@ -53,12 +54,12 @@ describe('LoginPageUI', () => {
 
         await nextFrame();
       });
-      it('should dispatch the event "login:ui:submit"', () => {
+      it('should dispatch the event "login-ui-submit"', () => {
         loginButton.click();
 
         expect(eventStub).to.have.been.calledOnce;
       });
-      it('should dispatch the event "login:ui:submit" with the username and password', () => {
+      it('should dispatch the event "login-ui-submit" with the username and password', () => {
         const expectedValue = {
           detail: { username: 'username', password: 'password' },
         };
@@ -66,6 +67,21 @@ describe('LoginPageUI', () => {
         loginButton.click();
 
         expect(eventStub).to.have.been.calledWithMatch(expectedValue);
+      });
+    });
+    describe('when there is a login error', () => {
+      it('should display a error', async () => {
+        element = await fixture(
+          html` <login-page-ui loginError></login-page-ui> `
+        );
+        await nextFrame();
+
+        const errorMessage = element.shadowRoot.querySelector('.login-error');
+        expect(errorMessage).to.be.not.null;
+      });
+      it('should display a error', () => {
+        const errorMessage = element.shadowRoot.querySelector('.login-error');
+        expect(errorMessage).to.be.null;
       });
     });
   });
