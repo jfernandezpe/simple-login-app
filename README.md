@@ -5,8 +5,6 @@ Simple app with two features: login and see the user's last login. It has a lot 
 
 The next step would be splited in several package and create a monorepo with lerna, but I didn't create yet due some problem with the open-wc configuration.
 
-About webpack and rollup, it only has the default open-wc configuration and it may be useful some custom one.
-
 ## technological stack
 Application created with web components
 

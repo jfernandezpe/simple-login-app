@@ -9,9 +9,11 @@ import { createSpaConfig } from '@open-wc/building-rollup';
 // use createBasicConfig to do regular JS to JS bundling
 // import { createBasicConfig } from '@open-wc/building-rollup';
 
+const OUTPUT_DIR = 'dist/';
+
 const baseConfig = createSpaConfig({
   // use the outputdir option to modify where files are output
-  // outputDir: 'dist',
+  outputDir: OUTPUT_DIR,
 
   // IE11 compatibility
   legacyBuild: true,
@@ -29,7 +31,12 @@ export default merge(baseConfig, {
   input: './index.html',
   plugins: [
     copy({
-      targets: [{ src: 'manifest.webmanifest', dest: 'dist/' }],
+      targets: [
+        { src: 'manifest.json', dest: OUTPUT_DIR },
+        { src: 'assets/icons', dest: OUTPUT_DIR },
+        { src: 'service-worker.js', dest: OUTPUT_DIR },
+        { src: 'offline.html', dest: OUTPUT_DIR },
+      ],
     }),
   ],
 

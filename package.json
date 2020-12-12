@@ -14,7 +14,7 @@
     "build": "rimraf dist && rollup -c rollup.config.js",
     "start:build": "npm run build && web-dev-server --root-dir dist --app-index index.html --open --compatibility none",
     "start": "web-dev-server --app-index index.html --node-resolve --open --watch",
-    "desploy": "npm run test && npm run build",
+    "ci": "npm run lint && npm test",
     "ncu": "ncu",
     "ncu:u": "ncu -u"
   },
