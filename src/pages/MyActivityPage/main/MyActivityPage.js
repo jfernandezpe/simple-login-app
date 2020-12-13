@@ -1,12 +1,36 @@
 import { LitElement, html } from 'lit-element';
+import '../components/my-activity-ui/my-activity-ui.js';
+import { myActivityFactory } from '../domain/MyActivity/index.js';
 
 export default class MyActivityPage extends LitElement {
+  static get properties() {
+    return {
+      loginSince: { type: Number },
+    };
+  }
+
   constructor() {
     super();
-    this.loginError = false;
+    this.loginSince = 0;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.myActivity = myActivityFactory();
+    this.getMyActivity();
+  }
+
+  getMyActivity() {
+    this.myActivity.getLoginSince().then(({ loginSince }) => {
+      this.loginSince = loginSince;
+    });
   }
 
   render() {
-    return html`This is my activity page`;
+    return html`<my-activity-ui
+      .loginSince="${this.loginSince}"
+      class="ui-component"
+    >
+    </my-activity-ui>`;
   }
 }

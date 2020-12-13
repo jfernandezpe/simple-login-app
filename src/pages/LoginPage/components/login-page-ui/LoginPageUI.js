@@ -60,14 +60,14 @@ export default class LoginPageUI extends LocalizeMixin(
       ></mwc-textfield>
 
       <mwc-button
-        class="from-submit"
+        class="form-submit"
         label="${this.msgLit('login-page-ui:login')}"
-        @click="${this.onButtonClick}"
+        @click="${this.onLoginClick}"
       ></mwc-button>
     </form>`;
   }
 
-  onButtonClick(e) {
+  onLoginClick(e) {
     e.preventDefault();
     const formFields = getFormFields(this.shadowRoot);
 

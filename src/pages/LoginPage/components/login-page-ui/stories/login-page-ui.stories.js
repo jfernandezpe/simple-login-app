@@ -5,7 +5,6 @@ import LoginPageUI from '../LoginPageUI.js';
 export default {
   title: 'Pages/login',
   component: LoginPageUI,
-  argTypes: { 'login-ui-submit': { action: 'login-ui-submit' } },
 };
 
 export const LoginPageInterface = () =>

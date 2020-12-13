@@ -9,4 +9,5 @@ const subfix = isProduction() ? '.json' : '';
 
 export const endpoints = {
   authentication: `${prefix}/authentication${subfix}`,
+  myActivity: `${prefix}/my-activity${subfix}`,
 };

@@ -5,7 +5,7 @@
 
 The porpouse of this app is develop a progressive web app scaffolding made with webcomponents app.
 
- [You can see a live demo here](https://simple-login-app-ee195.web.app/), any user/password will log in successfully.
+ [You can see a live demo here](https://simple-login-app-ee195.web.app/), any user/password will log in successfuly.
 
 The app has two features: log in and see the user's last log in in the data base (which is mocked). It has a lot of over-engenering, but thinking about how to scalete this application it has been a learning for me and I will use it as template for personal projects.
 
@@ -50,7 +50,7 @@ It the piece reponsible of routing, session and other common states or technical
 
 The main features or modules of the application. They communicate to the app with CustomEvents and receive params from the app with properties. They entry point have to be a web component.
 
-Every page or module must be indepence and desacomplate of other pages, modules and the app. They must interact only with the app and repositories. The repositories may know the app session if the app has interceped them.
+Every page or module must be, agnostic, indepence and desacomplate of other pages, modules and the app. They must interact only with the app and repositories. The repositories may know the app session if the app has interceped them.
 
 It is highly recommended every module has:
 
@@ -61,7 +61,7 @@ It is highly recommended every module has:
   * etc.
 * Visual Components: which must be stateless. They should be non reusable components or layouts, otherwise it should be in the component catalogue
 
-And may have:
+And maybe have:
 * domain: the business logic
 * repositories: which communicate which the API and may be intercepted by the app
 
@@ -122,6 +122,8 @@ Install the dependencies
 
 Execute the unit test and generate a html coverage report
 `npm test`
+
+The coverage report is located in the folder `coverage/lcov-report`
 
 ### Demoing
 

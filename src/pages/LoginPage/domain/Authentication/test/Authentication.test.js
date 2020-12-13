@@ -56,7 +56,7 @@ describe('Authenticate', () => {
         authenticate
           .login(username, password)
           .then(() => {
-            throw new Error('expected rejected');
+            throw new Error('expected be rejected');
           })
           .catch(() => {
             assertEmptyToken(authenticate);

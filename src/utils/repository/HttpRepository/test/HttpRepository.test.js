@@ -48,24 +48,29 @@ describe('Repository', () => {
 
       expect(data).to.be.deep.equal(fakePostData());
     });
-  })
+  });
   describe('when the request fails', () => {
-    it('should reject  when is GET',  (done) => {
-      repository.get().then(() => {
-        throw new Error('The request should fail');
-      }).catch((e) => {
-        expect(e).to.be.an('Error');
-        done();
-      })
+    it('should reject  when is GET', done => {
+      repository
+        .get()
+        .then(() => {
+          throw new Error('The request should fail');
+        })
+        .catch(e => {
+          expect(e).to.be.an('Error');
+          done();
+        });
     });
-    it('should reject when is POST', (done) => {
-      repository.post().then(() => {
-        throw new Error('The request should fail');
-      }).catch((e) => {
-        expect(e).to.be.an('Error');
-        done();
-      })
+    it('should reject when is POST', done => {
+      repository
+        .post()
+        .then(() => {
+          throw new Error('The request should fail');
+        })
+        .catch(e => {
+          expect(e).to.be.an('Error');
+          done();
+        });
     });
-  })
-
+  });
 });
