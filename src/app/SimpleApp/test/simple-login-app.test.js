@@ -45,7 +45,7 @@ describe('SimpleLoginApp', () => {
 
       expect(getToken()).to.be.equal(token);
     });
-    //TODO: improve this test
+    // TODO: improve this test
     it('should configure the HttpRepository with the given token', () => {
       actionDispatchEvent(element, 'authentication-success');
 

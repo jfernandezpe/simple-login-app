@@ -6,6 +6,7 @@ import {
   validateForm,
 } from '../../../../utils/forms/validateMwc.js';
 import { EventsMixin } from '../../../../utils/mixins/index.js';
+import styles from './LoginPageUI.styles.js';
 
 import '@material/mwc-button';
 import '@material/mwc-textfield';
@@ -27,13 +28,17 @@ export default class LoginPageUI extends LocalizeMixin(
     ];
   }
 
+  static get styles() {
+    return styles;
+  }
+
   constructor() {
     super();
     this.loginError = false;
   }
 
   render() {
-    return html`<main>
+    return html`<main class="small-layout">
       <h1>${this.msgLit('login-page-ui:title')}</h1>
       ${this.loginError ? this.renderLoginError() : this.renderLoginForm()}
     </main>`;
@@ -60,6 +65,7 @@ export default class LoginPageUI extends LocalizeMixin(
       ></mwc-textfield>
 
       <mwc-button
+        raised
         class="form-submit"
         label="${this.msgLit('login-page-ui:login')}"
         @click="${this.onLoginClick}"

@@ -4,7 +4,7 @@
   "description": "An example of a progressive-web-app with webcomponets",
   "scope": "",
   "start_url": "index.html",
-  "theme_color": "#1d73b2",
+  "theme_color": "#6200ee",
   "background_color": "#ededed",
   "display": "standalone",
   "icons": [{

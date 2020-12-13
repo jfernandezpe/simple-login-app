@@ -3,11 +3,17 @@ import '../components/my-activity-ui/my-activity-ui.js';
 import { myActivityFactory } from '../domain/MyActivity/index.js';
 import { EventsMixin } from '../../../utils/mixins/index.js';
 
+import styles from './MyActivityPage.style.js';
+
 export default class MyActivityPage extends EventsMixin(LitElement) {
   static get properties() {
     return {
       loginSince: { type: Number },
     };
+  }
+
+  static get styles() {
+    return styles;
   }
 
   constructor() {

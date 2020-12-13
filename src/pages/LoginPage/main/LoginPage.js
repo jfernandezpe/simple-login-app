@@ -4,11 +4,17 @@ import { authenticationFactory } from '../domain/Authentication/authenticationFa
 import '../components/login-page-ui/login-page-ui.js';
 import { EventsMixin } from '../../../utils/mixins/index.js';
 
+import styles from './LoginPage.styles.js';
+
 export default class LoginPage extends EventsMixin(LitElement) {
   static get properties() {
     return {
       loginError: { type: Boolean },
     };
+  }
+
+  static get styles() {
+    return styles;
   }
 
   constructor() {
