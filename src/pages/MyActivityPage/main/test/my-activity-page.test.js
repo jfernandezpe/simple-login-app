@@ -31,4 +31,15 @@ describe('my-activity-page', () => {
       expect(loginSince).to.be.equal(expectedLoginSince);
     });
   });
+  describe('when "my-activity-ui-logout" event is received', () => {
+    it('should dispatch the event "authentication-logout"', () => {
+      const eventStub = sinon.stub();
+      element.addEventListener('authentication-logout', eventStub);
+      const ui = element.shadowRoot.querySelector('.ui-component');
+
+      ui.triggerEvent('my-activity-ui-logout');
+
+      expect(eventStub).to.have.been.called;
+    });
+  });
 });

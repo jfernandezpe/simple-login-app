@@ -104,8 +104,8 @@ It provides a method to inject the session token
 ```javascript 
 import { configToken } from '../../utils/repository/HttpRepository/index.js';
 
-const token = 'some-token'
-configToken('tokenHeaderName', token);
+// getToken has to be a callback which provides the token
+configToken('tokenHeaderName', getToken());
 ```
 
 ### Config

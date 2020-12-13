@@ -34,7 +34,7 @@ export default class MyActivityUI extends LocalizeMixin(
       <p>${this.msgLit('my-activity-ui:description')}</p>
       <time-counter initialCount="${this.loginSince}"></time-counter>
       <mwc-button
-        class="form-submit"
+        class="logout-button"
         label="${this.msgLit('my-activity-ui:logout')}"
         @click="${this.onLogoutClick}"
       ></mwc-button>
@@ -42,7 +42,6 @@ export default class MyActivityUI extends LocalizeMixin(
   }
 
   onLogoutClick() {
-    this.something();
-    // TODO:
+    this.triggerEvent('my-activity-ui-logout');
   }
 }

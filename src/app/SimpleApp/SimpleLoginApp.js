@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit-element';
 import '../../pages/LoginPage/login-page.js';
 import { configToken } from '../../utils/repository/HttpRepository/index.js';
-
+import { getToken, setToken } from './session/index.js';
 import { router, navigate } from './router/router.js';
 
 export default class SimpleLoginApp extends LitElement {
@@ -10,24 +10,33 @@ export default class SimpleLoginApp extends LitElement {
 
     this.addEventListener(
       'authentication-success',
-      SimpleLoginApp.handleAuthenticationSuccess
+      SimpleLoginApp.authenticate
     );
+    this.addEventListener('authentication-logout', SimpleLoginApp.logout);
   }
 
   disconnectedCallback() {
     this.removeEventListener(
       'authentication-success',
-      SimpleLoginApp.handleAuthenticationSuccess
+      SimpleLoginApp.authenticate
     );
+
+    this.removeEventListener('authentication-logout', SimpleLoginApp.logout);
   }
 
-  static handleAuthenticationSuccess({ detail }) {
+  static authenticate({ detail }) {
     SimpleLoginApp.configToken(detail.token);
     SimpleLoginApp.navigate('my-activity');
   }
 
   static configToken(token) {
-    configToken('SLAapp-Authentication', token);
+    setToken(token);
+    configToken('SLAapp-Authentication', getToken);
+  }
+
+  static logout() {
+    SimpleLoginApp.configToken('');
+    SimpleLoginApp.navigate('');
   }
 
   // eslint-disable-next-line class-methods-use-this
