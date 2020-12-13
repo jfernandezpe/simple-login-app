@@ -5,7 +5,7 @@ const prefix = isProduction()
   ? 'https://simple-login-app-ee195-default-rtdb.europe-west1.firebasedatabase.app'
   : '/api';
 
-  const subfix = isProduction() ? '.json' : '';
+const subfix = isProduction() ? '.json' : '';
 
 export const endpoints = {
   authentication: `${prefix}/authentication${subfix}`,

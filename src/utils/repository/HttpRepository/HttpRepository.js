@@ -1,20 +1,19 @@
-import { axios } from '@bundled-es-modules/axios';
-
 export default class Repository {
-  constructor({ url }) {
+  constructor({ url, axios }) {
     this.url = url;
+    this.axios = axios;
   }
 
   get(body = {}) {
     const { params } = body;
 
-    const promise = axios.get(this.url, { params });
+    const promise = this.axios.get(this.url, { params });
 
     return Repository._processPromise(promise);
   }
 
   post(body = {}) {
-    const promise = axios.post(this.url, body);
+    const promise = this.axios.post(this.url, body);
 
     return Repository._processPromise(promise);
   }

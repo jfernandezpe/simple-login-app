@@ -9,7 +9,7 @@ describe('AuthenticationRepository', () => {
 
   beforeEach(() => {
     fakeRepository = {
-      post: sinon.stub(),
+      get: sinon.stub(),
     };
     authenticationRepository = new AuthenticationRepository(fakeRepository);
   });
@@ -19,13 +19,13 @@ describe('AuthenticationRepository', () => {
       authenticationRepository.login('username', 'password');
     });
     it('should call to the repository', () => {
-      expect(fakeRepository.post).to.have.been.called;
+      expect(fakeRepository.get).to.have.been.called;
     });
     it('should call to the repository with the username and password', () => {
       const expectedParams = {
         body: { username: 'username', password: 'password' },
       };
-      expect(fakeRepository.post).to.have.been.calledWith(expectedParams);
+      expect(fakeRepository.get).to.have.been.calledWith(expectedParams);
     });
   });
 });

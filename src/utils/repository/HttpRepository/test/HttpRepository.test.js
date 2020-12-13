@@ -1,7 +1,7 @@
 import { expect } from '@open-wc/testing';
 import sinon from 'sinon';
 
-import Repository from '../HttpRepository.js';
+import { httpRepositoryFactory } from '../httpRepositoryFactory.js';
 
 const fakeGetData = () => ({
   data: {
@@ -34,7 +34,7 @@ describe('Repository', () => {
   });
 
   beforeEach(() => {
-    repository = new Repository({ url: '/some/fake-endpoint' });
+    repository = httpRepositoryFactory({ url: '/some/fake-endpoint' });
   });
 
   describe('when performs a get', () => {
