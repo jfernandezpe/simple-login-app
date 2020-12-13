@@ -15,8 +15,9 @@ export default class Authentication {
         this.token = token;
         return { token };
       })
-      .catch(() => {
+      .catch(error => {
         this.setDefaultAttributes();
+        throw error;
       });
   }
   // Another actions such as recover password or sign ups

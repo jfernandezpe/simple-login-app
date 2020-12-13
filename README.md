@@ -143,9 +143,9 @@ Build a dist version
 Build a dist version and run the run the app
 `npm run start:build`
 
-### Prepare to ci
-Previous steps before build the app in a CD/CI pipeline
-`npm run ci`
+### Prepare to list:test
+Execute the linter and then the tests
+`npm run lint:test`
 
 ## Integration with CD/CI tools 
 The project is integrated with Github’s actions which automatically deploy the app in firebase.
@@ -158,7 +158,7 @@ Futhermore there are some command that may be usefull in a CD/CI pipeline
 npm test
 npm run storybook:build 
 npm run build
-npm run ci
+npm run lint:test
 ```
 
 

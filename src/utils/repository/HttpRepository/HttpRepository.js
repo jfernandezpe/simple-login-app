@@ -19,7 +19,9 @@ export default class Repository {
   }
 
   static _processPromise(promise) {
-    return promise.then(Repository._filterResponse).catch(error => error);
+    return promise.then(Repository._filterResponse).catch(error => {
+      throw error;
+    });
   }
 
   static _filterResponse({ data }) {
