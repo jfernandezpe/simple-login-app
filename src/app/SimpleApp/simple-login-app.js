@@ -1,3 +1,3 @@
-import { SimpleLoginApp } from './SimpleLoginApp.js';
+import SimpleLoginApp from './SimpleLoginApp.js';
 
 customElements.define('simple-login-app', SimpleLoginApp);

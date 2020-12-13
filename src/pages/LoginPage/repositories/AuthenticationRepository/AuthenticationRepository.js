@@ -5,6 +5,6 @@ export default class AuthenticationRepository {
 
   login(username, password) {
     const body = { username, password };
-    return this.repository.post({ body });
+    return this.repository.get({ body });
   }
 }

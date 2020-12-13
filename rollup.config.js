@@ -33,7 +33,7 @@ export default merge(baseConfig, {
     copy({
       targets: [
         { src: 'manifest.json', dest: OUTPUT_DIR },
-        { src: 'assets/icons', dest: OUTPUT_DIR },
+        { src: 'assets/icons', dest: `${OUTPUT_DIR}assets/` },
         { src: 'service-worker.js', dest: OUTPUT_DIR },
         { src: 'offline.html', dest: OUTPUT_DIR },
       ],

@@ -34,7 +34,7 @@ describe('LoginPage', () => {
         password
       );
     });
-    describe('when the login is successfull', () => {
+    describe('when the login is successful', () => {
       let eventStub;
       beforeEach(() => {
         eventStub = sinon.stub();

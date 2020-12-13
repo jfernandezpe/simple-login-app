@@ -1,5 +1,2 @@
-const prefix = '/api';
-
-export const endpoints = {
-  authentication: `${prefix}/authentication`,
-};
+export { endpoints } from './endpoints.js';
+export * from './environment.js';

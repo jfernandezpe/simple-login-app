@@ -25,7 +25,7 @@ describe('LoginPageUI', () => {
     let eventStub;
     beforeEach(() => {
       form = element.shadowRoot.querySelector('.login-form');
-      loginButton = form.querySelector('.from-submit');
+      loginButton = form.querySelector('.form-submit');
 
       eventStub = sinon.stub();
       element.addEventListener('login-ui-submit', eventStub);

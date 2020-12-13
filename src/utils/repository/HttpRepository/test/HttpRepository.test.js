@@ -1,7 +1,7 @@
 import { expect } from '@open-wc/testing';
 import sinon from 'sinon';
 
-import Repository from '../HttpRepository.js';
+import { httpRepositoryFactory } from '../httpRepositoryFactory.js';
 
 const fakeGetData = () => ({
   data: {
@@ -34,21 +34,43 @@ describe('Repository', () => {
   });
 
   beforeEach(() => {
-    repository = new Repository({ url: '/some/fake-endpoint' });
+    repository = httpRepositoryFactory({ url: '/some/fake-endpoint' });
   });
 
-  describe('when performs a get', () => {
-    it('should resolves the API values when the request was ok', async () => {
+  describe('when the request is ok', () => {
+    it('should resolves the API values when is GET', async () => {
       const data = await repository.get();
 
       expect(data).to.be.deep.equal(fakeGetData());
     });
-  });
-  describe('when performs a post', () => {
-    it('should resolves the API values when the request was ok', async () => {
+    it('should resolves the API when is POST', async () => {
       const data = await repository.post();
 
       expect(data).to.be.deep.equal(fakePostData());
+    });
+  });
+  describe('when the request fails', () => {
+    it('should reject  when is GET', done => {
+      repository
+        .get()
+        .then(() => {
+          throw new Error('The request should fail');
+        })
+        .catch(e => {
+          expect(e).to.be.an('Error');
+          done();
+        });
+    });
+    it('should reject when is POST', done => {
+      repository
+        .post()
+        .then(() => {
+          throw new Error('The request should fail');
+        })
+        .catch(e => {
+          expect(e).to.be.an('Error');
+          done();
+        });
     });
   });
 });
